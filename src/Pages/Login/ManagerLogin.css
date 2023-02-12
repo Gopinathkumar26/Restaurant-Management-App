@@ -1,0 +1,61 @@
+.manager_login {
+    background-color: rgb(233, 196, 227);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+       
+  }
+
+  .manager_form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .select_position {
+    padding: 6px;
+    border-radius: 5px;
+    font-size: medium;
+    margin: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .manager_username, .manager_password {
+    text-align: left;
+    padding: 4px 0;
+  }
+
+  .input_manager_username, .input_manager_password {
+    margin: 8px 0;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: larger;
+  }
+
+  .msg {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;  
+    padding: 0%;
+    color: red;
+  }
+
+  .btn_managerlogin {
+    border: none;
+    margin: 8px 0;
+    background-color: rgb(228, 156, 62);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: medium;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
