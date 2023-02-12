@@ -8,20 +8,20 @@ const OwnerLogin = () => {
   
   const cities = [
     {id:"1", name:"Cuddalore", value:"Cuddalore"},
-    {id:"2", name:"Chennai"},
-    {id:"3", name:"Pondicherry"},
+    {id:"2", name:"Chennai", value:"Chennai"},
+    {id:"3", name:"Pondicherry", value:"Pondicherry"},
   ];
 
   const branches = [
-    {id:"1", cityId:"1", name:"Nellikuppam"},
-    {id:"2", cityId:"1", name:"Kurinjipadi"},
-    {id:"3", cityId:"1", name:"Panruti"},
-    {id:"4", cityId:"2", name:"Thiruvanmiyur"},
-    {id:"5", cityId:"2", name:"Kottivakkam"},
-    {id:"6", cityId:"2", name:"Neelangarai"},
-    {id:"7", cityId:"3", name:"Thavalakuppam"},
-    {id:"8", cityId:"3", name:"Ariyangkuppam"},
-    {id:"9", cityId:"3", name:"Murungapakkam"},
+    {id:"1", cityId:"1", name:"Nellikuppam", value:"Nellikuppam"},
+    {id:"2", cityId:"1", name:"Kurinjipadi", value:"Kurinjipadi"},
+    {id:"3", cityId:"1", name:"Panruti", value:"Panruti"},
+    {id:"4", cityId:"2", name:"Thiruvanmiyur", value:"Thiruvanmiyur"},
+    {id:"5", cityId:"2", name:"Kottivakkam", value:"Kottivakkam"},
+    {id:"6", cityId:"2", name:"Neelangarai", value:"Neelangarai"},
+    {id:"7", cityId:"3", name:"Thavalakuppam", value:"Thavalakuppam"},
+    {id:"8", cityId:"3", name:"Ariyangkuppam", value:"Ariyangkuppam"},
+    {id:"9", cityId:"3", name:"Murungapakkam", value:"Murungapakkam"},
   ];
 
   const[city, setCity] = useState([]);

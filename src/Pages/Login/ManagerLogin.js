@@ -30,7 +30,7 @@ const ManagerLogin = () => {
     }
     if(!values.password) {
       errors.password = "Password is required!";
-    }else if (values.password.length < 4) {
+    }else if (values.password.length === 4) {
       errors.password = "Password must be more than 4 characters";
     }
     return errors;
@@ -43,8 +43,14 @@ const ManagerLogin = () => {
   };
 
   const handleLogin = () => {
-    if(formValues.username !== 'Select' && formValues.password !== '') {
+    if(formValues.username === 'Manager' && formValues.password === '12345') {
       navigation('/managerhome')
+    } 
+     if(formValues.username === 'Chef' && formValues.password === '12345') {
+      navigation('/kitchen')
+    } 
+     if(formValues.username === 'Cashier' && formValues.password === '12345') {
+      navigation('/orders')
     }
   };
 

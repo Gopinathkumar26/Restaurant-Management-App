@@ -34,13 +34,13 @@ const OrderMenu = () => {
   
   const validate = (values) => {
     const errors = {};
-    const regex = /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
+    
     if(!values.name) {
       errors.name = "Name is required!";
     }
     if(!values.phonenumber) {
       errors.phonenumber = "Phone number is required!";
-    }else if (!regex.test(values.phonenumber)) {
+    }else if (!values.phonenumber.match(/^[(0|91)?[6-9][0-9]{9}$/)) {
       errors.phonenumber = "This is not a valid phone number!";
     }
     if(!values.address1) {

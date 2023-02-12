@@ -8,7 +8,7 @@ const OtpLogin = () => {
     const initialValue = {number:""}
     const [otp, setOtp] = useState(initialValue);
     const [error, setError] = useState({});
-    const [count, setCount] = useState(30);
+    const [count, setCount] = useState(60);
     
     let intervalRef = useRef();
     
@@ -34,9 +34,11 @@ const OtpLogin = () => {
 
     const validate =(values) => {
       const errors = {};
-      if(!values.otp) {
+      if (!values.otp) {
         errors.otp = 'Please enter OTP'
-      } 
+      } else if(values.otp.length >= 1 ) {
+        errors.otp = 'Invalid OTP'
+      }
       return errors;
     };
 
