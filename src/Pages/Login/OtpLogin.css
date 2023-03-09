@@ -55,12 +55,17 @@
 .btn_resend {
     border: none;
     margin: 8px 0;
-    color: blue;
+    background-color: blue;
+    color: white;
     padding: 10px 20px;
     border-radius: 10px;
     font-size: medium;
-    cursor:pointer;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     justify-content: space-between;
+  }
+
+  .btn_resend [disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
   }

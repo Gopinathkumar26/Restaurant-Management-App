@@ -4,6 +4,7 @@ import Modal from '../UI/Modal';
 import CartContext from '../../store/cart-context';
 import CartItem from './CartItem';
 import { NavLink } from 'react-router-dom';
+import OrderItem from '../Order/OrderItem';
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -22,6 +23,7 @@ const cartItemAddHandler = (item) => {
     const cartItems = (
     <ul className={classes['cart-item']}>
         {cartCtx.items.map((item) => ( 
+            
         <CartItem 
           key={item.id} 
           name={item.name} 

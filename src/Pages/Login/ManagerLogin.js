@@ -30,7 +30,7 @@ const ManagerLogin = () => {
     }
     if(!values.password) {
       errors.password = "Password is required!";
-    }else if (values.password.length === 4) {
+    }else if (values.password.length < 4) {
       errors.password = "Password must be more than 4 characters";
     }
     return errors;
@@ -58,21 +58,28 @@ const ManagerLogin = () => {
     <div className='manager_login'>
       <h1>Franchise Login</h1>
         <form className='manager_form' onSubmit={submitHandler}>
-           
-            <label className='manager_username'><b>Position:</b></label>
-            <select className='input_manager_username' name='username' onChange={changeHandler} value={formValues.username}>  
-              <option>Select </option>
-              <option>Chef</option>
-              <option>Cashier</option>
-              <option>Manager</option>
+            <label className='manager_username'><b>Position</b></label>
+            <select className='input_manager_username' 
+                    name='username' 
+                    onChange={changeHandler} 
+                    value={formValues.username}>  
+                    <option>Select </option>
+                    <option>Chef</option>
+                    <option>Cashier</option>
+                    <option>Manager</option>
              </select>
             <p className='msg'>{formErrors.username}</p>
-            <label className='manager_password'><b>Password:</b></label>
-            <input className='input_manager_password' type='password' name='password' onChange={changeHandler} value={formValues.password} />
+            <label className='manager_password'><b>Password</b></label>
+            <input className='input_manager_password' 
+                   type='password' 
+                   name='password' 
+                   onChange={changeHandler} 
+                   value={formValues.password} />
             <p className='msg'>{formErrors.password}</p>
-            <button className='btn_managerlogin' type='submit' onClick={() => handleLogin()}>Login</button>
+            <button className='btn_managerlogin' 
+                    type='submit' 
+                    onClick={() => handleLogin()}>Login</button>
         </form>
-        
     </div>
   )
 }

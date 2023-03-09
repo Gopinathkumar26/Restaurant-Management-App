@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-//import PhoneInput from 'react-phone-input-2';
 import './Login.css';
 
 const Login = () => {
@@ -47,6 +46,7 @@ const Login = () => {
 
     return errors;
   };
+
     const handleLogin =() => {
       if(formValues.username !== '' && formValues.phonenumber !=='') {
         navigation('/otplogin')
@@ -57,16 +57,26 @@ const Login = () => {
     <div className='login'>
         <h1>Welcome to ABC Restaurant</h1>
         <form className='loginform' onSubmit={submitHandler}>
-          <label className='name_username'>USERNAME:</label>
-          <input className='input_username' type="text" name='username' onChange={changeHandler} value={formValues.username} />
+          <label className='name_username'>USERNAME</label>
+          <input className='input_username' 
+                 type="text" 
+                 name='username' 
+                 onChange={changeHandler} 
+                 value={formValues.username}/>
           <p className='msg'>{formErrors.username}</p>
-          <label className='name_password'>PHONE NUMBER:</label>
-          <input className='input_password' type="number" name='phonenumber' onChange={changeHandler} value={formValues.phonenumber} />
+          <label className='name_password'>PHONE NUMBER</label>
+          <input className='input_password' 
+                 type="number" 
+                 name='phonenumber' 
+                 onChange={changeHandler} 
+                 value={formValues.phonenumber}/>
           <p className='msg'>{formErrors.phonenumber}</p>
-          <button className='btn_login' type="submit" onClick={() => handleLogin()}>Log In</button>
-          <div><NavLink style={{color:"blue", textDecoration:"none"}} to="/ownerlogin">Login as FRANCHISE OWNER</NavLink></div>
+          <button className='btn_login'
+                  type="submit" 
+                  onClick={() => handleLogin()}>Log In</button>
+          <NavLink style={{color:"blue"}} 
+                   to="/ownerlogin">Login as FRANCHISE OWNER</NavLink>
         </form>
-        
     </div>
   )
 }

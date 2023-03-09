@@ -1,10 +1,4 @@
-.manager_home {
-    font-family: 'Times New Roman', Times, serif;
-    
-}
-
 .header {
-    
     top: 0;
     left: 0;
     width: 80%;
@@ -31,7 +25,6 @@
     align-items: center;
     border-radius: 25px;
     font-weight: bold;
-    
   }
   
   .button:hover,
@@ -45,7 +38,6 @@
     font-weight: bold;
     font-size: 25px;
     padding: 50px 100px;
-    
   }
 
   .footer {

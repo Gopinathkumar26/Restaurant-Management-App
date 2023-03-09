@@ -17,7 +17,6 @@ const OrderMenu = () => {
     setFormValues({ ...formValues, [name]: value});
   }
 
-
   const submitHandler = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -61,8 +60,10 @@ const OrderMenu = () => {
     return errors;
   };
     const handleSubmit =() => {
-      if(formValues.name !== '' && formValues.phonenumber !== '' && formValues.phonenumber.length === 10 && formValues.address1 !== '' &&
-         formValues.address2 !== '' && formValues.address3 !== '' && formValues.pincode !== ''  && formValues.pincode.length === 6) {
+      if(formValues.name !== '' && formValues.phonenumber !== '' && 
+         formValues.phonenumber.length === 10 && formValues.address1 !== '' &&
+         formValues.address2 !== '' && formValues.address3 !== '' && 
+         formValues.pincode !== ''  && formValues.pincode.length === 6) {
         navigation('/otplogin/customermenu/ordermenu/welcome')
       }
     };
@@ -72,22 +73,51 @@ const OrderMenu = () => {
         <h2>Enter Address to Order</h2>
         <form className='order_form' onSubmit={submitHandler}>
             <label className='label_'>Name:</label>
-            <input className='input_' type='text' name='name' onChange={changeHandler} value={formValues.name}/>
+            <input className='input_' 
+                   type='text' 
+                   name='name' 
+                   onChange={changeHandler} 
+                   value={formValues.name}/>
             <p className='msg'>{formErrors.name}</p>
             <label className='label_'>Phone Number:</label>
-            <input className='input_' type='number' name='phonenumber' onChange={changeHandler} value={formValues.phonenumber}/>
+            <input className='input_' 
+                   type='number' 
+                   name='phonenumber' 
+                   onChange={changeHandler} 
+                   value={formValues.phonenumber}/>
             <p className='msg'>{formErrors.phonenumber}</p>
             <label className='label_'>Address:</label>
-            <input className='input_' type='text' placeholder='Plot No./Door no.' name='address1' onChange={changeHandler} value={formValues.address1}/>
+            <input className='input_' 
+                   type='text' 
+                   placeholder='Plot No./Door no.' 
+                   name='address1' 
+                   onChange={changeHandler} 
+                   value={formValues.address1}/>
             <p className='msg'>{formErrors.address1}</p>
-            <input className='input_' type='text' placeholder='Street, City' name='address2' onChange={changeHandler} value={formValues.address2}/>
+            <input className='input_' 
+                   type='text' 
+                   placeholder='Street, City' 
+                   name='address2' 
+                   onChange={changeHandler} 
+                   value={formValues.address2}/>
             <p className='msg'>{formErrors.address2}</p>
-            <input className='input_' type='text' placeholder='Landmark' name='address3' onChange={changeHandler} value={formValues.address3}/>
+            <input className='input_' 
+                   type='text' 
+                   placeholder='Landmark' 
+                   name='address3' 
+                   onChange={changeHandler} 
+                   value={formValues.address3}/>
             <p className='msg'>{formErrors.address3}</p>
             <label className='label_'>Pincode:</label>
-            <input className='input_' type='tel' name='pincode' onChange={changeHandler} value={formValues.pincode}/>
+            <input className='input_' 
+                   type='tel' 
+                   name='pincode' 
+                   onChange={changeHandler} 
+                   value={formValues.pincode}/>
             <p className='msg'>{formErrors.pincode}</p>
-            <button className='btn' type='submit' onClick={handleSubmit}>submit</button>
+            <button className='btn' 
+                    type='submit' 
+                    onClick={handleSubmit}>submit</button>
         </form>
     </div>
   )

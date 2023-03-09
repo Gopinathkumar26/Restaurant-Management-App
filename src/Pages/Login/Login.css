@@ -20,6 +20,7 @@
 .name_username, .name_password {
   text-align: left;
   padding: 4px 0;
+  font-weight: bold;
 }
 
 
@@ -51,7 +52,3 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-.link {
-  color: white;
-  text-decoration: none;
-} 

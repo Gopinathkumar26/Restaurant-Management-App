@@ -8,18 +8,26 @@ const OtpLogin = () => {
     const initialValue = {number:""}
     const [otp, setOtp] = useState(initialValue);
     const [error, setError] = useState({});
-    const [count, setCount] = useState(60);
+    const [count, setCount] = useState(20);
     
     let intervalRef = useRef();
     
-    const decreaseCount = () => setCount((num) => num - 1);
-  
+    const decreaseCount = () => {
+       if(count > 0) {
+       setCount((num) => num - 1);
+       }
+       if(count === 0) {
+        clearInterval(intervalRef.current)
+       }
+    };
+
     useEffect(() => {
       intervalRef.current = setInterval(decreaseCount, 1000);
   
       return () => clearInterval(intervalRef.current);
-    }, []);
+    }, [count]);
 
+      
     const changeHandler = (e) => {
       const {name, value} = e.target;
       setOtp({ ...otp, [name]: value});
@@ -36,14 +44,19 @@ const OtpLogin = () => {
       const errors = {};
       if (!values.otp) {
         errors.otp = 'Please enter OTP'
-      } else if(values.otp.length >= 1 ) {
-        errors.otp = 'Invalid OTP'
+      } else if(values.otp.length !== 4) {
+        errors.otp = 'OTP must be in 4-digit'
       }
       return errors;
     };
 
+    const resendotp = () => {
+      setCount(20);
+      alert('OTP sent to your phone number')
+    }
+
    const handleVerify = () => {
-      if(otp.number !== '' && otp.number.length === 4) {
+      if(otp.number !== '' && otp.number.length === 4 ) {
         navigation('/otplogin/customermenu')
       }
     };
@@ -58,10 +71,19 @@ const OtpLogin = () => {
       <h2>Verify One Time Password:</h2>
       <form className='otp_box' onSubmit={submitHandler}>
         <p className='otp_desc'>Enter the 4-digit OTP sent to your<br/> phone number</p>
-        <input className='otp_input' type='number' name='number' placeholder='Enter OTP here' onChange={changeHandler}/>
+        <input className='otp_input' 
+               type='tel' 
+               name='number' 
+               placeholder='Enter OTP here' 
+               onChange={changeHandler}/>
         <p className='msg'>{error.otp}</p>
-       <div><button className='btn_verify' type='submit' onClick={() => handleVerify()}>Verify</button>
-        <button className='btn_resend'type='reset'>Resend OTP({count})</button></div> 
+        <div>
+          <button className='btn_verify' type='submit' onClick={() => handleVerify()}>Verify</button>
+          <button className='btn_resend'type='reset' disabled={count > 0}
+                  style={{opacity: count > 0 ? 0.5 : 1,
+                          cursor: count > 0 ? 'not-allowed' : 'pointer'}}
+                  onClick={resendotp}>Resend OTP({count})</button>
+        </div> 
       </form>
     </div>
   )

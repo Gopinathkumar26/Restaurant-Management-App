@@ -16,6 +16,14 @@
     border: 2px solid black;
     border-radius: 10px;
 }
+
+.label {
+    text-align: left;
+    padding: 4px 0;
+    font-size: large;
+    font-weight: bold;
+}
+
 .select_city, .select_branch {
     padding: 16px;
     margin: 8px 0;
