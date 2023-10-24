@@ -16,7 +16,7 @@ export default function Orders() {
             <div>
                 {orders.length ? orders.map((e, index) => (
                     <div key={index}>
-                        <ListGroup as="ol" style={{width:500, margin:'auto'}} >
+                         <ListGroup as="ol" style={{width:500, margin:'auto'}} >
                             <ListGroup.Item
                                 as="li"
                                 className="d-flex justify-content-between align-items-start" >

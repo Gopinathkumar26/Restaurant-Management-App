@@ -40,6 +40,7 @@ const ManagerLogin = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    handleLogin();
   };
 
   const handleLogin = () => {
@@ -77,8 +78,7 @@ const ManagerLogin = () => {
                    value={formValues.password} />
             <p className='msg'>{formErrors.password}</p>
             <button className='btn_managerlogin' 
-                    type='submit' 
-                    onClick={() => handleLogin()}>Login</button>
+                    >Login</button>
         </form>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import './OwnerLogin.css';
 
 const OwnerLogin = () => {
@@ -67,13 +67,15 @@ const OwnerLogin = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    if(formValues.username !== '' && formValues.password !== '') {    
+      navigation('/managerlogin')
   };
   
-  const handleNext = () => {
-    if(formValues.username !== '' && formValues.password !== '') {    
-       navigation('/managerlogin')
-  };
-}
+//   const handleNext = () => {
+//     if(formValues.username !== '' && formValues.password !== '') {    
+//        navigation('/managerlogin')
+//   };
+ }
 
   return (
     <div className='franchise_login'>
@@ -108,8 +110,9 @@ const OwnerLogin = () => {
             </select>
             <p className='msg'>{formErrors.password}</p>
             <button className='btn_next' 
-                    type='submit' 
-                    onClick={() => handleNext()}>Next</button>
+                    >Next</button>
+                    <NavLink style={{color:"blue"}} 
+                   to="/">Login as USER</NavLink>
         </form>
     </div>
   ); 

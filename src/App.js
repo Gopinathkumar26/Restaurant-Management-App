@@ -1,21 +1,14 @@
- import { RouterProvider } from "react-router-dom";
- import Route from "./Navigation/Route";
-//import Layout from "./components/Layout/Layout";
 import React from "react";
 
+import { RouterProvider } from "react-router-dom";
+import Route from "./Restaurant app/Navigation/Route";
 
 function App() {
-  // const[form,setForm] = useState('login')
-
-  // const changeForm = (formName) => {
-  //   setForm(formName);
-  // };
-
-  return (
-   //      form === "login" ? <Login onFormSwitch={changeForm} /> : <OwnerLogin  />
-   <RouterProvider router={Route} />  
-
-  );
+  return (  
+          <div>
+             <RouterProvider router={Route} />  
+          </div>
+            );
 }
 
 export default App;
